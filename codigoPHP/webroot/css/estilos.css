@@ -14,13 +14,46 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    & main #titulo{
+    & #titulo{
         display:grid;
         width:100dvw;
         height:5vh;
         place-content:center;
         font-weight:bolder;
         font-size:1.5rem;
+    }
+    & #Ejercicio1{
+        & h3{
+            width:100dvw;
+            height:3dvh;
+            text-align:center;
+            font-size:1.2rem;
+        }
+        & .tipo{
+            color:darkorange;
+        }
+        & .valor{
+            color:darkgreen;
+        }
+        & p{
+            margin:0;
+            padding:0;
+            margin-left:40%;
+        }
+    }
+    & #Ejercicio2{
+        & h3{
+            width:100dvw;
+            height:3dvh;
+            margin-top:13%;
+            text-align:center;
+            font-size:1.2rem;
+        }
+        & p,& h4,& pre{
+            width:100dvw;
+            text-align:center;
+            margin-top:5px;
+        }
     }
 }
 /* --- HEADER --- */
