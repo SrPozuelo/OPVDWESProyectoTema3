@@ -23,7 +23,7 @@
                 </div>
             </div>
         </header>
-        <main id="Ejercicio1">
+        <main id="contenedor">
             <div id="titulo">1-Inicializar variables de distintos tipos de datos básicos (string, int, float, bool) y mostrarlos (echo, print, printf, print_r, var_dump).</div>
             <?php
                 /**

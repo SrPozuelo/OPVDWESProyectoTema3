@@ -23,7 +23,7 @@
                 </div>
             </div>
         </header>
-        <main id="Ejercicio3">
+        <main id="contenedor">
             <div id="titulo">3-Mostrar fecha y hora actual formateada en castellano (clase DateTime).</div>
             <?php
                 /*

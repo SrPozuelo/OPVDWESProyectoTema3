@@ -23,7 +23,7 @@
                 </div>
             </div>
         </header>
-        <main id="Ejercicio2">
+        <main id="contenedor">
             <div id="titulo">2-Inicializar y mostrar una variable heredoc.</div>
             <?php
                 /*
