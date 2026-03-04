@@ -23,8 +23,29 @@
                 </div>
             </div>
         </header>
-        <main>
+        <main id="Ejercicio3">
             <div id="titulo">3-Mostrar fecha y hora actual formateada en castellano (clase DateTime).</div>
+            <?php
+                /*
+                 * @author Óscar Pozuelo Villamandos
+                 * @since 04/03/2026
+                 * 3-Mostrar fecha y hora actual formateada en castellano (clase DateTime).
+                 * 
+                 */
+                $oFecha;
+                date_default_timezone_set('Europe/Madrid');  
+                setlocale(LC_TIME, 'es_ES.UTF-8', 'es_ES', 'spanish');
+                $oFecha=new DateTime();
+                echo("<h3>Fecha y hora actual.</h3><br>");
+                echo'<p>Si se utiliza solo format() de DateTime los dias de la semana y los meses están inglés</p>';
+                echo("<p>La fecha de hoy es :<span> " . $oFecha->format("l") . " " . $oFecha->format("d") . " de " . $oFecha->format("F") . " de " . $oFecha->format("o") . " y la hora es: " . $oFecha->format("H:i:s") . '</span></p>');
+                //info para el parametro format : https://www.php.net/manual/es/datetime.format.php
+
+                echo('<br><br><h3>Usando el timestamp de DateTime y strftime, los dias y los meses están en español</h3><br> ');
+
+                echo "<p>La fecha de hoy es: <span>" . strftime("%A %d de %B de %Y", $oFecha->getTimestamp()) .
+                " y la hora es: " . $oFecha->format("H:i:s") . '</span></p>';
+            ?>
         </main>
         <footer class="pie-pagina">
             <div class="contenido-footer">
