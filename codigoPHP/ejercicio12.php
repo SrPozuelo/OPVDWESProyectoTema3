@@ -24,7 +24,15 @@
             </div>
         </header>
         <main id="contenedor">
-            <div id="titulo">X-.</div>
+            <div id="titulo">12-Mostrar el contenido de las variables superglobales (utilizando print_r() y foreach()).</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+            </table>
         </main>
         <footer class="pie-pagina">
             <div class="contenido-footer">

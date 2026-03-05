@@ -14,21 +14,26 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    & #titulo{
-        display:grid;
-        width:100dvw;
-        height:5vh;
-        place-content:center;
-        font-weight:bolder;
-        font-size:1.5rem;
-    }
     & #contenedor{
-        & h3{
+        & #titulo{
+            display:grid;
             width:100dvw;
+            height:5vh;
+            place-content:center;
+            font-weight:bolder;
+            font-size:1.5rem;
+        }
+        & h3{
             height:3dvh;
             margin-top:2.5dvh;
-            text-align:center;
             font-size:1.2rem;
+            margin-left:35%;
+        }
+        & h4{
+            height:2.5dvh;
+            margin-top:2dvh;
+            font-size:1.1rem;
+            margin-left:37%;
         }
         & .tipo{
             color:darkorange;
@@ -39,7 +44,7 @@ body {
         & .variable{
             color:blue;
         }
-        & p,& .xdebug-var-dump{
+        & p,& .xdebug-var-dump,& pre{
             margin:0;
             padding:0;
             margin-top:5px;

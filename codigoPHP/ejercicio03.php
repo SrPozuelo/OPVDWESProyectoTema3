@@ -36,15 +36,38 @@
                 date_default_timezone_set('Europe/Madrid');  
                 setlocale(LC_TIME, 'es_ES.UTF-8', 'es_ES', 'spanish');
                 $oFecha=new DateTime();
-                echo("<h3>Fecha y hora actual.</h3><br>");
-                echo'<p>Si se utiliza solo format() de DateTime los dias de la semana y los meses están inglés</p>';
+                echo("<h3>Fecha y hora actual:</h3>");
+                echo'<p>Si se utiliza solo format() de DateTime los dias de la semana y los meses están inglés:</p>';
                 echo("<p>La fecha de hoy es :<span> " . $oFecha->format("l") . " " . $oFecha->format("d") . " de " . $oFecha->format("F") . " de " . $oFecha->format("o") . " y la hora es: " . $oFecha->format("H:i:s") . '</span></p>');
                 //info para el parametro format : https://www.php.net/manual/es/datetime.format.php
 
-                echo('<br><br><h3>Usando el timestamp de DateTime y strftime, los dias y los meses están en español</h3><br> ');
+                echo('<h3>Usando el timestamp de DateTime y strftime, los dias y los meses están en español:</h3> ');
 
-                echo "<p>La fecha de hoy es: <span>" . strftime("%A %d de %B de %Y", $oFecha->getTimestamp()) .
+                echo "<p>La fecha de hoy es: <span>" . strftime("%A %d de %B de %Y", $oFecha->getTimestamp()).
                 " y la hora es: " . $oFecha->format("H:i:s") . '</span></p>';
+                echo("<h3>Distintos formas de mostrar la fecha y la hora:</h3>");
+                echo ("<p>".($oFecha->format("Y-m-d H:i:s"))."</p>");
+                echo ("<p>".$oFecha->format("l, d F Y")."</p>");
+                echo ("<p>".$oFecha->format("D, d M Y")."</p>");
+                echo ("<p>¿Es año bisiesto? (1=Si, 0=No): ".($oFecha->format("L"))."</p>");
+                echo ("<p>".$oFecha->format("H:i:s")."</p>");
+                echo ("<p>".$oFecha->format("h:i A")."</p>");
+                echo ("<p>Zona horaria: ".$oFecha->format("e")."</p>");
+                echo("<p>Año: ".($oFecha->format("Y"))."</p>");
+                echo("<p>Día de la semana en español: ".(strftime("%A",$oFecha->getTimestamp()))."</p>");
+                echo("<p>Día de la semana en inglés: ".($oFecha->format("l"))."</p>");
+                $oDescubrimientoDeAmerica=new DateTime("12-10-1492 02:00:00");
+                echo("<h3>Distintos formas de mostrar la fecha y la hora del descubrimiento de América:</h3>");
+                echo ("<p>".($oDescubrimientoDeAmerica->format("Y-m-d H:i:s"))."</p>");
+                echo ("<p>".$oDescubrimientoDeAmerica->format("l, d F Y")."</p>");
+                echo ("<p>".$oDescubrimientoDeAmerica->format("D, d M Y")."</p>");
+                echo ("<p>¿Es año bisiesto? (1=Si, 0=No): ".($oDescubrimientoDeAmerica->format("L"))."</p>");
+                echo ("<p>".$oDescubrimientoDeAmerica->format("H:i:s")."</p>");
+                echo ("<p>".$oDescubrimientoDeAmerica->format("h:i A")."</p>");
+                echo ("<p>Zona horaria: ".$oDescubrimientoDeAmerica->format("e")."</p>");
+                echo("<p>Año: ".($oDescubrimientoDeAmerica->format("Y"))."</p>");
+                echo("<p>Día de la semana en español: ".strftime("%A",$oDescubrimientoDeAmerica->getTimestamp())."</p>");
+                echo("<p>Día de la semana en inglés: ".($oDescubrimientoDeAmerica->format("l"))."</p>");
             ?>
         </main>
         <footer class="pie-pagina">
@@ -55,7 +78,7 @@
                 </div>
                 <div class="iconos-footer">
                     <a href="https://github.com/SrPozuelo/OPVDWESProyectoTema3" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
-                    <a href="http://daw210.local.ieslossauces.es/OPVDWESProyectoTema3/indexProyectoTema3.html" title="Inicio"><i class="fa-solid fa-house"></i></a>
+                    <a href="../indexProyectoTema3.html" title="Inicio"><i class="fa-solid fa-house"></i></a>
                     <a href="../indexProyectoTema3.html" title="Volver a Tema3"><i class="fa-solid fa-arrow-turn-up"></i></a>
                 </div>
             </div>
