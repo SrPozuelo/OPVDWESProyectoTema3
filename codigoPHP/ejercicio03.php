@@ -45,6 +45,15 @@
 
                 echo "<p>La fecha de hoy es: <span>" . strftime("%A %d de %B de %Y", $oFecha->getTimestamp()).
                 " y la hora es: " . $oFecha->format("H:i:s") . '</span></p>';
+                echo("<h3>La fecha de hoy usando la clase IntlDateFormatter:</h3>");
+                $oFormateador= new IntlDateFormatter(
+                    'es_ES',
+                    IntlDateFormatter::FULL,
+                    IntlDateFormatter::NONE,
+                    'Europe/Madrid',
+                    IntlDateFormatter::GREGORIAN
+                );
+                echo("<p>La fecha actual:".$oFormateador->format($oFecha)."</p>");
                 echo("<h3>Distintos formas de mostrar la fecha y la hora:</h3>");
                 echo ("<p>".($oFecha->format("Y-m-d H:i:s"))."</p>");
                 echo ("<p>".$oFecha->format("l, d F Y")."</p>");

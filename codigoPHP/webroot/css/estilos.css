@@ -50,6 +50,28 @@ body {
             margin-top:5px;
             margin-left:40%;
         }
+        & .TablaPHP{
+            width:80dvw;
+            border-collapse:collapse;
+            border:1px solid black;
+            margin-left:10dvw;
+            & thead{
+                background-color:#777BB4;
+                & tr th{
+                    color:white;
+                    border:1px solid black;
+                }
+            }
+            & tbody{
+                & tr td{
+                    border:1px solid black;
+                    padding-left:2dvw;
+                }
+                & .centrado{
+                    text-align:center;
+                }
+            }
+        }
     }
 }
 /* --- HEADER --- */

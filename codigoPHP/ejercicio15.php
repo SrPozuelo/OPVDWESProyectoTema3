@@ -61,7 +61,7 @@
                 echo("<p>El total del salario semanal es de ".$iSalarioTotal."€</p>");
                 echo("<p>El salario más alto es de ".$iSalarioMaximo."€</p>");
                 echo("<p>El salario más bajo es de ".$iSalarioMinimo."€</p>");
-                echo("<p>El salario promedio es de ".$iSalarioPromedio."€</p>");
+                echo("<p>El salario promedio es de ".number_format($iSalarioPromedio,2,',',' ')."€</p>");
                 echo("<p>Días contabilizados:".count($aSalarioDiario)."</p>")
                 
             ?>
