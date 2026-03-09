@@ -39,34 +39,35 @@
                 $aTeatro[7][11]="Miguel";
                 $aTeatro[8][13]="Pepe";
             ?>
-            <table>
+            <table class="teatro">
                 <?php
                     echo("<tr>");
-                        echo("<td></td>");
-                        for($iColumna=1;$iColumna<ASIENTOS;$iColumna++){
-                            echo("<td>ASIENTO".$iColumna."</td>");
+                        echo("<td class='nada'></td>");
+                        for($iColumna=1;$iColumna<=ASIENTOS;$iColumna++){
+                            echo("<td class='borde'>A ".$iColumna."</td>");
                         }
-                        echo("<td></td>");
+                        echo("<td class='nada'></td>");
                     echo("</tr>");
-                    for($iFila=1;$iFila<FILAS;$iFila++){
+                    for($iFila=1;$iFila<=FILAS;$iFila++){
                         echo("<tr>");
-                            echo("<td>FILA".$iFila."</td>");
-                            for($iColumna=1;$iColumna<ASIENTOS;$iColumna++){
+                            echo("<td class='borde'>F ".$iFila."</td>");
+                            for($iColumna=1;$iColumna<=ASIENTOS;$iColumna++){
                                 if(is_null($aTeatro[$iFila][$iColumna])){
-                                    echo("<td style='background-color:red'>FILA ".$iFila."  ASIENTO ".$iColumna."</td>");
+                                    echo("<td style='background-color:rgb(255,30,30)'>F ".$iFila."  A ".$iColumna."</td>");
                                 }
                                 else{
                                     echo("<td style='background-color:lime'>".$aTeatro[$iFila][$iColumna]."</td>");
                                 }
                             }
+                            echo("<td class='borde'>F ".$iFila."</td>");
                         echo("</tr>");
                     }
                     echo("<tr>");
-                        echo("<td></td>");
-                        for($iColumna=1;$iColumna<ASIENTOS;$iColumna++){
-                            echo("<td>ASIENTO".$iColumna."</td>");
+                        echo("<td class='nada'></td>");
+                        for($iColumna=1;$iColumna<=ASIENTOS;$iColumna++){
+                            echo("<td class='borde'>A ".$iColumna."</td>");
                         }
-                        echo("<td></td>");
+                        echo("<td class='nada'></td>");
                     echo("</tr>");
                 ?>
             </table>

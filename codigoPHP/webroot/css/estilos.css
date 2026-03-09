@@ -72,6 +72,24 @@ body {
                 }
             }
         }
+        & .teatro{
+            width:80dvw;
+            border-collapse:collapse;
+            margin-left:10dvw;
+            & tbody{
+                & tr td{
+                    border:1px solid black;
+                    text-align:center;
+                    padding:1dvh;
+                }
+                & .nada{
+                    border:0px solid black;
+                }
+                & .borde{
+                    background-color:grey;
+                }
+            }
+        }
     }
 }
 /* --- HEADER --- */
