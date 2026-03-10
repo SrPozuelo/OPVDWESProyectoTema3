@@ -24,13 +24,20 @@
             </div>
         </header>
         <main id="contenedor">
-            <div id="titulo">X-.</div>
+            <div class="titulo">ejercicio21.php</div>
+            <?php
+                highlight_file("../codigoPHP/ejercicio21.php");
+            ?>
+            <div class="titulo">Tratamiento.php</div>
+            <?php
+                highlight_file("../codigoPHP/Tratamiento.php");
+            ?>
         </main>
         <footer class="pie-pagina">
             <div class="contenido-footer">
                 <div class="texto-legal">
                     <p>2025-26 IES LOS SAUCES. ©Todos los derechos reservados.</p>
-                    <p class="autor"><a href="https://oscarpozvil.ieslossauces.es" target="_blank">Óscar Pozuelo Villamandos.</a> Fecha de Actualización: 23-02-2026</p>
+                    <p class="autor"><a href="https://oscarpozvil.ieslossauces.es" target="_blank">Óscar Pozuelo Villamandos.</a> Fecha de Actualización:09-03-2026</p>
                 </div>
                 <div class="iconos-footer">
                     <a href="https://github.com/SrPozuelo/OPVDWESProyectoTema3" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>

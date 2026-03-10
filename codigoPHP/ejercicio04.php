@@ -24,7 +24,26 @@
             </div>
         </header>
         <main id="contenedor">
-            <div id="titulo">X-.</div>
+            <div id="titulo">4-Mostrar fecha y hora actual en Oporto formateada en portugués.</div>
+            <?php
+                date_default_timezone_set('Europe/Lisbon');
+                $oFecha=new DateTime();
+                setlocale(LC_TIME,'pt_PT.utf8');
+                echo("<h3>Fecha y hora actual en portugés con format():</h3>");
+                echo("<p>".$oFecha->format("I,d F Y H:i:s")."</p>");
+                echo("<h3>Fecha y hora actual en portugés con strftime():</h3>");
+                echo("<p>".strftime("%A %d de %B del %Y %H:%M:%S")."</p>");
+                $oFormateador= new IntlDateFormatter(
+                    'pt_PT',
+                    IntlDateFormatter::FULL,
+                    IntlDateFormatter::NONE,
+                    'Europe/Lisbon',
+                    IntlDateFormatter::GREGORIAN
+                );
+                echo "<h3>Fecha y hora actual en portugués con la clase IntlDateFormatter:</h3><br>";
+                echo "<p>A data de hoje é: <span>".$oFormateador->format($oFecha)."</span></p>";
+                echo "<p>E a hora atual é: ".$oFecha->format("H:i:s")."</p>";
+            ?>
         </main>
         <footer class="pie-pagina">
             <div class="contenido-footer">

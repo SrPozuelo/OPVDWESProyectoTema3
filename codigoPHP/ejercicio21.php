@@ -24,13 +24,29 @@
             </div>
         </header>
         <main id="contenedor">
-            <div id="titulo">X-.</div>
+            <div id="titulo">21-Formulario cuestionario enviado a Tratamiento.php para mostrar resultados.</div>
+            <?php
+                /* @author Óscar Pozuelo Villamandos
+                 * @version 1.0
+                 * @since 09-03-2026
+                 * Ejercicio 21
+                 * Construir un formulario para recoger un cuestionario realizado a una persona y enviarlo
+                 * a una página Tratamiento.php para que muestre las preguntas y las respuestas recogidas.
+                 */
+            ?>
+            <form action="Tratamiento.php" method="post">
+                <label for="codigo">Código:</label>
+                <input name="codigo" id="codigo" type="text"><br>
+                <label for="descripcion">Descripción:</label>
+                <input name="descripcion" id="descripcion" type="text"><br>
+                <button type="submit">ENVIAR</button>
+            </form>
         </main>
         <footer class="pie-pagina">
             <div class="contenido-footer">
                 <div class="texto-legal">
                     <p>2025-26 IES LOS SAUCES. ©Todos los derechos reservados.</p>
-                    <p class="autor"><a href="https://oscarpozvil.ieslossauces.es" target="_blank">Óscar Pozuelo Villamandos.</a> Fecha de Actualización: 23-02-2026</p>
+                    <p class="autor"><a href="https://oscarpozvil.ieslossauces.es" target="_blank">Óscar Pozuelo Villamandos.</a> Fecha de Actualización: 9-03-2026</p>
                 </div>
                 <div class="iconos-footer">
                     <a href="https://github.com/SrPozuelo/OPVDWESProyectoTema3" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>

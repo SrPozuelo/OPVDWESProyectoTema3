@@ -24,13 +24,19 @@
             </div>
         </header>
         <main id="contenedor">
-            <div id="titulo">X-.</div>
+            <div id="titulo">7-Mostrar el nombre del fichero que se está ejecutando.</div>
+            <?php
+                echo("<h3>Fichero que se esta ejecutando:</h3>");
+                echo('<p>Con <span class="variable">$_SERVER[PHP_SELF]<span>:<span class="valor">'.$_SERVER["PHP_SELF"].'</span></p>');
+                echo('<p>Con <span class="variable">$_SERVER[SCRIPT_NAME]<span>:<span class="valor">'.$_SERVER["SCRIPT_NAME"].'</span></p>');
+                echo('<p>Con <span class="variable">$_SERVER[SCRIPT_FILENAME]<span>:<span class="valor">'.$_SERVER["SCRIPT_FILENAME"].'</span></p>');
+            ?>
         </main>
         <footer class="pie-pagina">
             <div class="contenido-footer">
                 <div class="texto-legal">
                     <p>2025-26 IES LOS SAUCES. ©Todos los derechos reservados.</p>
-                    <p class="autor"><a href="https://oscarpozvil.ieslossauces.es" target="_blank">Óscar Pozuelo Villamandos.</a> Fecha de Actualización: 23-02-2026</p>
+                    <p class="autor"><a href="https://oscarpozvil.ieslossauces.es" target="_blank">Óscar Pozuelo Villamandos.</a> Fecha de Actualización: 05-03-2026</p>
                 </div>
                 <div class="iconos-footer">
                     <a href="https://github.com/SrPozuelo/OPVDWESProyectoTema3" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>

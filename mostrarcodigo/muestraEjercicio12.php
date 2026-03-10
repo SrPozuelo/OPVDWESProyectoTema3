@@ -24,7 +24,10 @@
             </div>
         </header>
         <main id="contenedor">
-            <div id="titulo">X-.</div>
+            <div id="titulo">ejercicio12.php</div>
+            <?php
+                highlight_file("../codigoPHP/ejercicio12.php");
+            ?>
         </main>
         <footer class="pie-pagina">
             <div class="contenido-footer">

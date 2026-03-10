@@ -23,10 +23,10 @@
                 </div>
             </div>
         </header>
-        <main>
+        <main class="contenedor">
             <div id="titulo">0-Hola mundo y phpinfo().</div>
             <?php
-                echo("¡Hola mundo!");
+                echo("<p>¡Hola mundo!</p>");
                 phpinfo();
             ?>
         </main>
@@ -38,7 +38,7 @@
                 </div>
                 <div class="iconos-footer">
                     <a href="https://github.com/SrPozuelo/OPVDWESProyectoTema3" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
-                    <a href="http://daw210.local.ieslossauces.es/OPVDWESProyectoTema3/indexProyectoTema3.html" title="Inicio"><i class="fa-solid fa-house"></i></a>
+                    <a href="../indexProyectoTema3.html" title="Inicio"><i class="fa-solid fa-house"></i></a>
                     <a href="../indexProyectoTema3.html" title="Volver a Tema3"><i class="fa-solid fa-arrow-turn-up"></i></a>
                 </div>
             </div>

@@ -24,13 +24,19 @@
             </div>
         </header>
         <main id="contenedor">
-            <div id="titulo">X-.</div>
+            <div id="titulo">8-Mostrar la dirección IP del equipo desde el que estás accediendo.</div>
+            <?php
+                echo("<h3>IP del cliente:</h3>");
+                echo('<p>IP del equipo actual(<span class="variable">$_SERVER[REMOTE_ADDR]</span>):'.$_SERVER["REMOTE_ADDR"].'</p>');
+                echo('<h3>IP del servidor</h3>');
+                echo('<p>IP del equipo actual(<span class="variable">$_SERVER[SERVER_ADDR]</span>):'.$_SERVER["SERVER_ADDR"].'</p>');
+            ?>
         </main>
         <footer class="pie-pagina">
             <div class="contenido-footer">
                 <div class="texto-legal">
                     <p>2025-26 IES LOS SAUCES. ©Todos los derechos reservados.</p>
-                    <p class="autor"><a href="https://oscarpozvil.ieslossauces.es" target="_blank">Óscar Pozuelo Villamandos.</a> Fecha de Actualización: 23-02-2026</p>
+                    <p class="autor"><a href="https://oscarpozvil.ieslossauces.es" target="_blank">Óscar Pozuelo Villamandos.</a> Fecha de Actualización: 05-03-2026</p>
                 </div>
                 <div class="iconos-footer">
                     <a href="https://github.com/SrPozuelo/OPVDWESProyectoTema3" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
