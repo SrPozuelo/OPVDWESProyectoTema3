@@ -91,34 +91,92 @@ body {
             }
         }
         & form{
+            display:grid;
             width:80dvw;
             height:20dvw;
             margin-top:10dvw;
             margin-left:10dvw;
-            & table{
-                border-collapse:collapse;
+            place-content:center;
+            & .sinErrores{
                 width:30dvw;
-                & tr td{
-                    width:50%;
-                    height:10dvh;
-                    & label{
-                        display:grid;
-                        width:100%;
-                        height:100%;
-                        align-items:center;
-                        text-align:right;
-                        padding-right:10%;
+                & tr{
+                    & td{
+                        width:50%;
                     }
-                    & .texto{
-                        width:100%;
-                        height:40%;
-                    }
-                }
-                & tr td #Enviar{
-                    background-color:var(--color-principal);
-                    color:white;
                 }
             }
+            & .conErrores{
+                width:60dvw;
+                & tr{
+                    & td:nth-of-type(1){
+                        width:25%;
+                    }
+                    & td:nth-of-type(2){
+                        width:35%;
+                    }
+                    & td:nth-of-type(3){
+                        width:40%;
+                    }
+                }
+            }
+            & .formulario{
+                border-collapse:collapse;
+                & tr{
+                    & td{
+                        height:10dvh;
+                        & label{
+                            display:grid;
+                            width:100%;
+                            height:100%;
+                            align-items:center;
+                            text-align:right;
+                            padding-right:10%;
+                        }
+                        & span{
+                            position:absolute;
+                            color:red;
+                            top:50%;
+                            left:3%;
+                            transform:translate(0%,-50%);
+                        }
+                        & input{
+                            font-size:1.2rem;
+                        }
+                        & .texto{
+                            width:100%;
+                            height:40%;
+                        }
+                        & .fecha{
+                            width:50%;
+                            height:40%;
+                        }
+                        & #Enviar{
+                            position:absolute;
+                            width:25%;
+                            height:50%;
+                            background-color:var(--color-principal);
+                            color:white;
+                            top:50%;
+                            left:50%;
+                            transform:translate(-50%,-50%);
+                        }
+                    }
+                    & #Env, & .span{
+                        position:relative;
+                    }
+                }
+            }
+        }
+        .obligatorio{
+            background-color:rgb(255,255,150);
+        }
+        .bloqueado{
+            background-color:lightgrey;
+        }
+    }
+    & .contenedor20{
+        & pre{
+            margin:0 !important;
         }
     }
 }
