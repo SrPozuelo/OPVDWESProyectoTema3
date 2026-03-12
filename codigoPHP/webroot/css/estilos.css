@@ -149,6 +149,7 @@ body {
                         & .fecha{
                             width:50%;
                             height:40%;
+                            text-align:center;
                         }
                         & #Enviar{
                             position:absolute;

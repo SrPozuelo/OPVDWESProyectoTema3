@@ -35,31 +35,39 @@
                  * teclearlas.
                  */
                 // Importación de la librería de validación necesaria
-                require_once "../core/231018libreriaValidacion.php";
+                require_once "../core/080126libreriaValidacion.php";
                 //Variable interruptor que nos indica que la entrada es correcta
-                $entradaOK = true;
+                $entradaOK=true;
+                $oFecha=new DateTime();
                 //Array asociativo preparado para recoger los mensajes de error
                 $aErrores=[
                     'CodDepartamento'          =>'', 
                     'DescDepartamento'         =>'',
-                    'FechaCreacionDepartamento'=>''
+                    'FechaCreacionDepartamento'=>'',
+                    'VolumenDeNegocio'         =>'',
+                    'FechaBajaDepartamento'    =>''
                 ];
                 //Array asociativo preparado para recoger las respuestas correctas (si $entradaOK)
                 $aRespuestas=[ 
                     'CodDepartamento'          =>'', 
                     'DescDepartamento'         =>'',
-                    'FechaCreacionDepartamento'=>''
+                    'FechaCreacionDepartamento'=>'',
+                    'VolumenDeNegocio'         =>'',
+                    'FechaBajaDepartamento'    =>''
                 ];
                 //Para cada campo del formulario: Validar entrada de los datos
                 if (isset($_REQUEST["Enviar"])){
                     //Código que se ejecuta cuando se envía el formulario
                     // Validamos los datos del formulario
-                    $aErrores['CodDepartamento']= validacionFormularios::comprobarAlfabetico($_REQUEST['CodDepartamento'],3,1,1);
-                    $aErrores['DescDepartamento']= validacionFormularios::comprobarAlfaNumerico($_REQUEST['DescDepartamento'],1000,1,1);
+                    $aErrores['CodDepartamento']=validacionFormularios::comprobarAlfabetico($_REQUEST['CodDepartamento'],3,1,1);
+                    $aErrores['DescDepartamento']=validacionFormularios::comprobarAlfaNumerico($_REQUEST['DescDepartamento'],1000,1,1);
+                    $aErrores['FechaCreacionDepartamento']=validacionFormularios::validarFecha($_REQUEST['FechaCreacionDepartamento']);
+                    $aErrores['VolumenDeNegocio']= validacionFormularios::comprobarFloatMonetarioES($_REQUEST['VolumenDeNegocio'],PHP_FLOAT_MAX,0,1);
+                    $aErrores['FechaBajaDepartamento']=validacionFormularios::validarFecha($_REQUEST['FechaBajaDepartamento'],"31-12-9999",$oFecha->format("d-m-Y"),0);
                     foreach($aErrores as $campo => $valor){
                         if(!empty($valor)){
                             // Comprobar si el valor es válido
-                            $entradaOK = false;
+                            $entradaOK=false;
                         } 
                     }
                 }
@@ -72,6 +80,11 @@
                     // Recuperar los valores del formulario
                     $aRespuestas['CodDepartamento']=$_REQUEST['CodDepartamento'];
                     $aRespuestas['DescDepartamento']=$_REQUEST['DescDepartamento'];
+                    $oFecha=new DateTime($_REQUEST['FechaCreacionDepartamento']);
+                    $aRespuestas['FechaCreacionDepartamento']=$oFecha->format("d-m-Y");
+                    $aRespuestas['VolumenDeNegocio']=$_REQUEST['VolumenDeNegocio'].' €';
+                    $oFecha=new DateTime($_REQUEST['FechaBajaDepartamento']);
+                    (empty($_REQUEST['FechaBajaDepartamento']))?$aRespuestas['FechaBajaDepartamento']='No tiene':$aRespuestas['FechaBajaDepartamento']=$oFecha->format("d-m-Y");
                     echo "<h3>Respuestas del formulario:</h3>";
                     foreach ($aRespuestas as $campo => $valor) {
                         echo "<p>".$campo."=".$valor."</p>";
@@ -111,9 +124,9 @@
                                         <label for="crea">Fecha de creación:</label>
                                     </td>
                                     <td>
-                                        <input type="date" name="FechaCreacionDepartamento" class="fecha bloqueado" id="crea" value="<?php $oFecha=new DateTime(); echo $oFecha->format('d').'/'.$oFecha->format('m').'/'.$oFecha->format('Y')?>">
+                                        <input type="text" name="FechaCreacionDepartamento" class="fecha bloqueado" id="crea" value="<?php $oFecha=new DateTime(); echo $oFecha->format('d').'/'.$oFecha->format('m').'/'.$oFecha->format('Y')?>" readonly>
                                     </td>
-                                    <td>
+                                    <td class="span">
                                         <span><?php echo $aErrores['FechaCreacionDepartamento']?></span>
                                     </td>
                                 </tr>
@@ -122,9 +135,22 @@
                                         <label for="Vol">Volumen de negocio:</label>
                                     </td>
                                     <td>
-                                        <input type="number" name="VolumenDeNegocio" class="texto obligatorio" id="crea" value="">
+                                        <input type="text" name="VolumenDeNegocio" class="texto obligatorio" id="crea" value="<?php echo(isset($_REQUEST["VolumenDeNegocio"])&&empty($aErrores["VolumenDeNegocio"]))?$_REQUEST["VolumenDeNegocio"]:''?>">
                                     </td>
-                                    <td></td>
+                                    <td class="span">
+                                        <span><?php echo $aErrores['VolumenDeNegocio']?></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="baja">Fecha de baja:</label>
+                                    </td>
+                                    <td>
+                                        <input type="date" name="FechaBajaDepartamento" class="fecha" id="date" value="<?php echo(isset($_REQUEST["FechaBajaDepartamento"])&&empty($aErrores["FechaBajaDepartamento"]))?$_REQUEST["FechaBajaDepartamento"]:''?>">
+                                    </td>
+                                    <td class="span">
+                                        <span><?php echo $aErrores['FechaBajaDepartamento']?></span>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td colspan="3" id="Env">
