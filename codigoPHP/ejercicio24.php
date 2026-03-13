@@ -88,13 +88,13 @@
                     echo "<h3>Respuestas del formulario:</h3>";
                     foreach ($aRespuestas as $campo => $valor){
                         if($valor instanceof DateTime){
-                            echo "<p>".$campo."=".strftime("%d-%m-%Y",$valor->getTimestamp())."</p>";
+                            //echo "<p>".$campo."=".strftime("%d-%m-%Y",$valor->getTimestamp())."</p>";
+                            echo "<p>".$campo."=".$valor->format("d-m-Y")."</p>";
                         }
                         else{
                             echo "<p>".$campo."=".$valor."</p>";
                         }
                     }
-                    echo("<p>".$_REQUEST['FechaCreacionDepartamento']."</p>");
                 }
                 else {
                     //Mostrar el formulario hasta que lo rellenemos correctamente

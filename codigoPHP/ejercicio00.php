@@ -23,7 +23,7 @@
                 </div>
             </div>
         </header>
-        <main class="contenedor">
+        <main id="contenedor">
             <div id="titulo">0-Hola mundo y phpinfo().</div>
             <?php
                 echo("<p>¡Hola mundo!</p>");
